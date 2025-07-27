@@ -15,7 +15,7 @@ app.use(express.json());
 //   credentials: true,
 // }));
 
-app.use(cars());
+app.use(cors());
 
 app.use(cookieParser());
 

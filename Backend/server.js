@@ -40,20 +40,12 @@ server.use('/backend2', backend2);
 //     res.send("hello govind");
 // })
 
-// Serve static files
-
-
-// if (process.env.NODE_ENV === "production") {
-  server.use(express.static(path.join(__dirname, "..", "frontend/dist")));
+  server.use(express.static(path.join(__dirname, "..", "Frontend/dist")));
 
   server.get("/{*splat}", (req, res) => {
-    res.sendFile(path.join(__dirname, "..", "frontend", "dist", "index.html"));
+    res.sendFile(path.join(__dirname, "..", "Frontend", "dist", "index.html"));
 
-    
-
-    // res.send(path.join(__dirname, "..", "frontend", "dist", "index.html"))
   });
-// }
 
 
 async function initializeConnection() {

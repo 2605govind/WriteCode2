@@ -1,7 +1,8 @@
 import axios from 'axios'
-
 const adminMiddleware = async (req, res, next) => {
 
+
+    const SERVER_URL = process.env.FRONTEND_URL;
     try {
 
         const { token } = req.cookies;
@@ -17,7 +18,7 @@ const adminMiddleware = async (req, res, next) => {
 
         // API call karuni hai
 
-        axios.post('http://localhost:3001/api/v1/service/checkadmin', {
+        axios.post(`${SERVER_URL}/backend1/api/v1/service/checkadmin`, {
             token: token
         })
             .then((response) => {

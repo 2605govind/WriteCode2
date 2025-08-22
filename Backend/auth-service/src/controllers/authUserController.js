@@ -325,7 +325,7 @@ export const varifyEmailOTP = async (req, res) => {
 
         res.cookie("token", token, {
             httpOnly: true,          // JS can't access cookie
-            secure: true,            // Only sent over HTTPS
+            secure: true,            
             maxAge: process.env.JWT_EXP_HOURS * 1000 * 60 * 60,  // In hour
             sameSite: "strict"       // Prevent CSRF
         });

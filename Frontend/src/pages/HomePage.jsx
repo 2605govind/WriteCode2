@@ -124,8 +124,8 @@ function Homepage() {
       const { data } = await axiosProblem.get(query);
 
       if (reset) {
-        setProblems(data.data);
-        setTotalProblems(data.pagination.total);
+        setProblems(data.data || []);
+        setTotalProblems(data?.pagination?.total);
       } else {
         setProblems(prev => [...prev, ...data.data]);
       }
@@ -271,7 +271,7 @@ function Homepage() {
       <div className="bg-[#1e1e1e] py-3 px-6 flex justify-between items-center shadow-sm fixed w-full z-50">
         <div className="flex items-center gap-8">
           <NavLink to="/" className="text-xl font-semibold text-orange-400">
-            LeetCode
+            WriteCode
           </NavLink>
         </div>
         <div className="flex items-center gap-4">
@@ -372,7 +372,7 @@ function Homepage() {
               )}
             </div>
             <div className="flex flex-col gap-2 max-h-60 overflow-y-auto">
-              {companyProblems.map((company) => (
+              {companyProblems?.map((company) => (
                 <button
                   key={company.company}
                   onClick={() => handleCompanyClick(company.company)}

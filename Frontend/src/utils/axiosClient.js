@@ -1,7 +1,11 @@
 import axios from 'axios'
 
+let AUTHSERVICE_URL =   (window.location.origin + "/backend1");
+let PROBLEMSERVICE_URL =  (window.location.origin + "/backend2");
+
+
 const axiosAuth = axios.create({
-    baseURL: `${import.meta.env.VITE_AUTHSERVICE_URL}/api/v1/`,
+    baseURL: `${AUTHSERVICE_URL}/api/v1/`,
     withCredentials: true,
     headers: {
         'Content-Type': 'application/json'
@@ -10,7 +14,7 @@ const axiosAuth = axios.create({
 
 
 const axiosProblem = axios.create({
-    baseURL: `${import.meta.env.VITE_PROBLEMSERVICE_URL}/api/v1/`,
+    baseURL: `${PROBLEMSERVICE_URL}/api/v1/`,
     withCredentials: true,
     headers: {
         'Content-Type': 'application/json'

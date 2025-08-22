@@ -1,7 +1,14 @@
 import app from './app.js';
 import 'dotenv/config';
 import ConnectMongoDB from './config/mongoDB.js'
-import redisClient from './config/redis.js';
+import redisClient from './config/redis.js';  
+
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Root .env ka path
+dotenv.config({ path: path.join(__dirname, "..", "..", ".env") });
 
 
 async function initializeConnection() {

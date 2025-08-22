@@ -1,6 +1,7 @@
 import axios from 'axios'
 
 const userMiddleware = async (req, res, next) => {
+    const SERVER_URL =  process.env.FRONTEND_URL;
 
     try {
 
@@ -16,7 +17,7 @@ const userMiddleware = async (req, res, next) => {
 
 
         // API call karuni hai
-        axios.post('http://localhost:3001/api/v1/service/checkuser', {
+        axios.post(`${SERVER_URL}/backend1/api/v1/service/checkuser`, {
             token: token
         })
             .then((response) => {

@@ -1,0 +1,12 @@
+{
+  "name": "writecode",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "build": "npm install --prefix Backend && npm install --prefix Backend/problem-service && npm install --prefix Backend/auth-service && npm install --prefix Frontend && npm run build --prefix Frontend",
+    "start": "npm run start --prefix backend"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

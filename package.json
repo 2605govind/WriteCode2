@@ -4,7 +4,7 @@
   "main": "server.js",
   "scripts": {
     "build": "npm install --prefix Backend && npm install --prefix Backend/problem-service && npm install --prefix Backend/auth-service && npm install --prefix Frontend && npm run build --prefix Frontend",
-    "start": "npm run start --prefix backend"
+    "start": "npm run start --prefix Backend"
   },
   "author": "",
   "license": "ISC",
